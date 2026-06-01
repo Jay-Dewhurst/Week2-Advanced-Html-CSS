@@ -1,0 +1,22 @@
+:root {
+    --primary-color: #699eb9e9; /* Primary color variable */
+    --secondary-color: #ff000083; /* Secondary color variable */
+    --tertiary-color: #d7c81c; /* Tertiary color variable */
+}
+
+* {
+  background-color: var(--primary-color);
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between; /* Pushes left and right sections to opposite edges */
+  align-items: center; /* Vertically centers the items */
+  width: 100%;
+  flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+}
+
+.group-right {
+  display: flex;
+  gap: 30px; /* Adds space between Item 2 and Item 3 */
+}
