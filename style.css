@@ -1,22 +1,101 @@
 :root {
-    --primary-color: #699eb9e9; /* Primary color variable */
+    --primary-color: #699eb9; /* Primary color variable */
     --secondary-color: #ff000083; /* Secondary color variable */
-    --tertiary-color: #d7c81c; /* Tertiary color variable */
+    --tertiary-color: #c5bf769e; /* Tertiary color variable */
+    --border-color: #000000; /* Border color variable */
 }
 
 * {
   background-color: var(--primary-color);
 }
 
-.flex-container {
+.container {
   display: flex;
-  justify-content: space-between; /* Pushes left and right sections to opposite edges */
-  align-items: center; /* Vertically centers the items */
-  width: 100%;
-  flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+  flex-direction: row; /* Arranges items in a row */
+  flex-wrap: wrap; /* Allows items to wrap to the next line if necessary */
+  justify-content: space-around; /* Centers the items horizontally */
 }
 
-.group-right {
+.flex-container {
   display: flex;
-  gap: 30px; /* Adds space between Item 2 and Item 3 */
+  flex-direction: column; /* Arranges items in a row */
+  justify-content: space-around; /* Centers the items horizontally */
+}
+
+.container div {
+  box-shadow: 0.5px 0.5px 8px 2px var(--border-color); /* Adds a shadow effect to each item */
+  border-radius: 12px; /* Adds rounded corners to each item */
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+  border: 2px outset var(--border-color); /* Adds a border to each item */
+  width: 100px; /* Each item takes up one-third of the container */
+  margin: 10px; /* Adds some space between items */
+  padding: 5px; /* Adds some padding inside each item */
+  text-align: center; /* Centers the text within each item */
+  background-color: var(--tertiary-color); /* Sets the background color for each item */
+}
+
+.pulse:hover {
+  width: 100px;
+  background-color: #3498db;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* test code */
+
+/* Vertical Sidebar Container */
+.sidebar-navbar {
+  display: flex;
+  flex-direction: column; /* Stacks items vertically */
+  width: 100px; /* Adjusts width to fit content */
+  box-shadow: 0.5px 0.5px 8px 2px var(--border-color); /* Adds a shadow effect to each item */
+  border-radius: 12px; /* Adds rounded corners to each item */
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+  border: 2px outset var(--border-color); /* Adds a border to each item */
+  margin: 10px; /* Adds some space between items */
+  padding: 5px; /* Adds some padding inside each item */
+  text-align: center; /* Centers the text within each item */
+  background-color: var(--tertiary-color); /* Sets the background color for each item */
+}
+
+/* Links Container */
+.nav-links {
+  background-color: var(--tertiary-color); /* Sets background color for the links container */
+  display: flex;
+  flex-direction: column; /* Stacks individual links */
+  list-style: none; /* Removes bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+/* Interactive Navigation Links */
+.nav-links a {
+  background-color: var(--tertiary-color); /* Sets link background color */
+  color: var(--border-color); /* Sets link color */
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: block;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Hover State */
+.nav-links a:hover {
+  background-color: #2f2f38;
+  color: #ffffff;
 }
