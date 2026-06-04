@@ -1,25 +1,90 @@
 :root {
     --primary-color: #699eb9; /* Primary color variable */
-    --secondary-color: #ff000083; /* Secondary color variable */
+    --secondary-color: #ff0000; /* Secondary color variable */
     --tertiary-color: #c5bf769e; /* Tertiary color variable */
     --border-color: #000000; /* Border color variable */
 }
 
-* {
-  background-color: var(--primary-color);
+* { /* Universal */
+  box-sizing: border-box;
+}
+
+p::first-letter {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+/* Responsive form code */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+label {
+  min-width: 48%;
+  margin-bottom: 10px;
+}
+
+input[type=text], select {
+  min-width: 45%;
+  margin-bottom: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 10px;
+}
+
+textarea {
+  min-width: 45%;
+  height: 150px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 10px;
+}
+
+input[type=submit] {
+  width: 50%;
+  background-color: var(--border-color);
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+}
+
+fieldset:invalid {
+  border: 2px dotted var(--secondary-color);
+  background-color: var(--secondary-color);
+}
+
+input:invalid {
+  border: 2px dotted var(--secondary-color);
+  background-color: var(--secondary-color);
+}
+
+@media screen and (max-width: 600px) {
+  label,
+  input[type=text],
+  input[type=submit],
+  select, textarea {
+    flex: 100%;
+    min-width: 100%;
+  }
 }
 
 .container {
   display: flex;
   flex-direction: row; /* Arranges items in a row */
   flex-wrap: wrap; /* Allows items to wrap to the next line if necessary */
-  justify-content: space-around; /* Centers the items horizontally */
-}
-
-.flex-container {
-  display: flex;
-  flex-direction: column; /* Arranges items in a row */
-  justify-content: space-around; /* Centers the items horizontally */
+  justify-content: center; /* Centers the items horizontally */
 }
 
 .container div {
@@ -36,8 +101,8 @@
 
 .pulse:hover {
   width: 100px;
-  background-color: #3498db;
-  animation: pulse 1.5s infinite;
+  background-color: var(--tertiary-color);
+  animation: pulse 2.2s infinite;
 }
 
 @keyframes pulse {
@@ -55,45 +120,73 @@
   }
 }
 
+.required::after {
+  content: " *";
+  color: var(--secondary-color);
+}
+
 /* Vertical Sidebar Container */
 .sidebar-navbar {
   display: flex;
   flex-direction: column; /* Stacks items vertically */
-  width: 100px; /* Adjusts width to fit content */
+  width: 300px; /* Adjusts width to fit content */
   box-shadow: 0.5px 0.5px 8px 2px var(--border-color); /* Adds a shadow effect to each item */
   border-radius: 12px; /* Adds rounded corners to each item */
   box-sizing: border-box; /* Ensures padding and border are included in the width */
   border: 2px outset var(--border-color); /* Adds a border to each item */
-  margin: 10px; /* Adds some space between items */
+  margin: 10px;
   padding: 5px; /* Adds some padding inside each item */
   text-align: center; /* Centers the text within each item */
-  background-color: var(--tertiary-color); /* Sets the background color for each item */
+  background-color: var(--tertiary-color);
+  text-decoration: none;
 }
 
 /* Links Container */
 .nav-links {
-  background-color: var(--tertiary-color); /* Sets background color for the links container */
   display: flex;
   flex-direction: column; /* Stacks individual links */
   list-style: none; /* Removes bullet points */
   padding: 0;
-  margin: 0;
 }
 
 /* Interactive Navigation Links */
 .nav-links a {
-  background-color: var(--tertiary-color); /* Sets link background color */
   color: var(--border-color); /* Sets link color */
   text-decoration: none;
   font-size: 1.1rem;
   display: block;
   padding: 10px;
   border-radius: 4px;
-  transition: background 0.3s, color 0.3s;
 }
 
 /* Hover State */
 .nav-links a:hover {
-  background-color: #2f2f38;
+  background-color: var(--border-color);
   color: #ffffff;
+}
+
+.navbox {
+  display: flex;
+}
+
+.contentbox { 
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding-left: 20px;
+  border: 2px outset var(--border-color);
+  border-radius: 12px;
+  background-color: var(--tertiary-color);
+}
+
+.formcontentbox { 
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 2px outset var(--border-color);
+  border-radius: 12px;
+  background-color: var(--tertiary-color);
 }
