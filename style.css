@@ -27,11 +27,11 @@ label {
   margin-bottom: 10px;
 }
 
-input:focus {
+input {
   background-color: var(--primary-color) !important;
 }
 
-input[type=text]:focus {
+input[type=text] {
   min-width: 45%;
   margin-bottom: 10px;
   border: 2px solid var(--border-color);
@@ -66,11 +66,11 @@ input[type=submit]:hover {
 }
 
 fieldset:invalid {
-  border: 2px dotted;
+  border: 2px solid;
 }
 
 input:invalid {
-  border: 2px dotted;
+  border: 2px solid;
 }
 
 @media screen and (max-width: 600px) {
