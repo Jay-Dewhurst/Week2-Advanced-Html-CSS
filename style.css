@@ -5,6 +5,10 @@
     --border-color: #000000; /* Border color variable */
 }
 
+body {
+  background-color: var(--primary-color);
+}
+
 p::first-letter {
   font-size: 2rem;
   font-weight: bold;
