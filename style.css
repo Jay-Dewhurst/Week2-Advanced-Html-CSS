@@ -27,29 +27,24 @@ label {
   margin-bottom: 10px;
 }
 
-input {
-  background-color: var(--primary-color) !important;
-}
-
-input[type=text] {
+input[type=text], select {
   min-width: 45%;
   margin-bottom: 10px;
-  border: 2px solid var(--border-color);
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   padding: 10px;
-  background-color: var(--tertiary-color) !important;
 }
 
 textarea {
   min-width: 45%;
   height: 150px;
   margin-bottom: 10px;
-  border: 2px solid var(--border-color);
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   padding: 10px;
 }
 
-input[type=submit]{
+input[type=submit] {
   width: 50%;
   background-color: var(--border-color);
   color: white;
@@ -66,11 +61,13 @@ input[type=submit]:hover {
 }
 
 fieldset:invalid {
-  border: 2px solid;
+  border: 2px dotted var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 
 input:invalid {
-  border: 2px solid;
+  border: 2px dotted var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 
 @media screen and (max-width: 600px) {
@@ -125,6 +122,7 @@ input:invalid {
 
 .required::after {
   content: " *";
+  color: var(--secondary-color);
 }
 
 /* Vertical Sidebar Container */
